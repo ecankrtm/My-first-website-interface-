@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVENTURE</title>
+    
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class ="navbar">
+        <h1 class ="logo">ADVENTURE</h1>
+        <a href ="#" class ="ctn">Learn More </a>
+        <ul class ="nav-links">
+            <li class="active"><a href ="#"></a>Home</li>
+            
+            <li><a href ="#"></a>Tours</li>
+            
+            <li><a href ="#"></a>Explore</li>
+            
+            <li><a href ="#"></a>About</li>
+            
+            <li class ="ctn"><a href="#"></a>Contact</li>
+        </ul>
+    </nav>
+    <header>
+
+    
+
+
+        <div class ="header-content">
+            <h2>Let's Explore the World, </h2>
+            <div class="line"></div>
+            <h1>Together</h1>
+            <a href ="#" class="ctn">Learn More</a>
+        </div>
+    </header>
+    
+    <section class ="events">  
+        <div class ="title ">
+        <h1>Upcoming Events</h1>
+        <div class="line"></div>
+    
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <img src="avrupa.jpg" alt="">
+            <h4>European Holiday</h4>
+            <p>Embarking on a journey through Europe is like stepping into a living storybook where history, culture, and breathtaking landscapes blend seamlessly. From the iconic landmarks to the hidden gems, every corner of this enchanting continent has a tale to tell . </p>
+            <a href ="#" class ="ctn">Learn More </a>
+         </div>
+         <div class="col">
+            <img src="Asiaa.jpg" alt="">
+            <h4>Asian  Holidays  </h4>
+            <p>Embarking on an Asian getaway is like stepping into a realm where ancient traditions harmoniously coexist with modern innovation. The diversity of landscapes, cultures, and experiences across this vast continent is nothing short of mesmerizing.</p>
+            <a href ="#" class ="ctn">Learn More </a>
+         </div>
+
+
+
+            
+        </div>
+    
+    </section>
+
+    <section class ="explore">
+
+        <div class="explore-content">
+            <h1>EXPLORE THE WORLD</h1>
+            <div class="line"></div>
+            <p>Whether it's wandering through vibrant cities, trekking across majestic landscapes, or diving into the depths of different traditions, exploring the world opens the door to endless possibilities and enriching experiences. </p>
+            <a href="#" class="ctn">Learn More </a>
+        </div>
+    </section>
+    <section class="tours">
+        <div class="row">
+            <div class="col content-col">
+                <h1>UPCOMING TOURS And DESTINATION</h1>
+                <div class="line"></div>
+                <p>Get ready for an exhilarating journey as we unveil our upcoming tours and breathtaking destinations. Whether you're a nature enthusiast, a culture seeker, or an adventure lover, our carefully curated tours promise unforgettable experiences.Explore the mystical landscapes of upcoming destinations, each with its own charm and allure. From the serene beauty of mountain retreats to the vibrant energy of bustling cities, our tours cater to diverse tastes and preferences.</p>
+                <a href="#" class="ctn">Learn More </a>
+            </div>
+            <div class="col image-col ">
+                <div class="image-gallery">
+                    <img src="bg3.jpg" alt="">
+                    <img src="bg12.jpg" alt="">
+                    <img src="bg6.jpg" alt="">
+                    <img src="bg7.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+
+        <p>Mezitli,Mersin|Phone:00000|Email:ezocnkurtum@gmail.com|Instegram:ezoooo|Twitter:ezocnkurtum   </p>
+        <p>2023 Adventure </p>
+
+    </section>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+    
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-menu');
+        });
+    </script>
+   
+
+   <section class="slideshow">
+    <div class="slides">
+        <div class="slide">
+            <img src="bg10.jpg" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="bg7.jpg" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="bg12.jpg" alt="Slide 3">
+        </div>
+    </div>
+</section>
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function showSlide(index) {
+        if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+
+        const translateValue = -currentIndex * 100 + '%';
+        slides.style.transform = 'translateX(' + translateValue + ')';
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    
+    setInterval(nextSlide, 1000); 
+
+    
+    document.querySelector('.slideshow').addEventListener('mouseover', () => {
+        clearInterval(slideInterval);
+    });
+
+    document.querySelector('.slideshow').addEventListener('mouseleave', () => {
+        slideInterval = setInterval(nextSlide, 3000);
+    });
+
+</script>
+
+
+</body>
+</html>
